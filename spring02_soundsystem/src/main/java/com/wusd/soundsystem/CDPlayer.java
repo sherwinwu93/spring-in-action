@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CDPlayer {
+public class CDPlayer implements MediaPlayer {
     private CompactDisc cd;
 
     //构造注入
@@ -19,6 +19,7 @@ public class CDPlayer {
         this.cd = cd;
     }
 
+    @Override
     public void play() {
         cd.play();
     }
