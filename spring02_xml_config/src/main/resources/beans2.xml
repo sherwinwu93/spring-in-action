@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="compactDisc" class="com.wusd.xmlconfig.impl.SgtPeppers"></bean>
+    <!--构造器注入:constructor-->
+    <!--<bean id="cdPlayer" class="com.wusd.xmlconfig.impl.CDPlayer">-->
+        <!--<constructor-arg ref="compactDisc"/>-->
+    <!--</bean>-->
+
+    <!--构造器注入:c命名空间-->
+    <!--<bean id="cdPlayer" class="com.wusd.xmlconfig.impl.CDPlayer"  c:cd-ref="compactDisc">-->
+    <!--</bean>-->
+    <bean id="cdPlayer" class="com.wusd.xmlconfig.impl.CDPlayer"  c:_0-ref="compactDisc">
+    </bean>
+
+    <bean id="blankDisc" class="com.wusd.xmlconfig.impl.BlankDisc">
+        <constructor-arg value="love jie"/>
+        <constructor-arg value="wusd"/>
+        <!--<constructor-arg><null/></constructor-arg>-->
+        <constructor-arg>
+            <!--set也是一样的-->
+            <!--<set></set>-->
+            <list>
+                <!--ref也是可以的-->
+                <!--<ref></ref>-->
+                <value>laopo laopo wo ai ni </value>
+                <value>laoshu ai dami</value>
+                <value>yifuzhiming</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <!--<bean id="blankDisc" class="com.wusd.xmlconfig.impl.BlankDisc" c:title="love jie" c:artist="wusd">-->
+    <!--</bean>-->
+</beans>
