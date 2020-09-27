@@ -1,0 +1,8 @@
+package com.wusd.aop;
+
+public class DefaultEncoreable implements Encoreable {
+    @Override
+    public void performEncore() {
+        System.out.println("DefaultEncoreable.performEncore...");
+    }
+}
