@@ -5,19 +5,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
       http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="compactDisc" class="com.wusd.xmlconfig.impl.SgtPeppers"></bean>
+    <bean id="compactDisc" class="com.wusd.envprofile.impl.SgtPeppers"></bean>
     <!--构造器注入:constructor-->
-    <!--<bean id="cdPlayer" class="com.wusd.xmlconfig.impl.CDPlayer">-->
+    <!--<bean id="cdPlayer" class="com.wusd.envprofile.impl.CDPlayer">-->
         <!--<constructor-arg ref="compactDisc"/>-->
     <!--</bean>-->
 
     <!--构造器注入:c命名空间-->
-    <!--<bean id="cdPlayer" class="com.wusd.xmlconfig.impl.CDPlayer"  c:cd-ref="compactDisc">-->
+    <!--<bean id="cdPlayer" class="com.wusd.envprofile.impl.CDPlayer"  c:cd-ref="compactDisc">-->
     <!--</bean>-->
-    <bean id="cdPlayer" class="com.wusd.xmlconfig.impl.CDPlayer"  c:_0-ref="compactDisc">
+    <bean id="cdPlayer" class="com.wusd.envprofile.impl.CDPlayer" c:_0-ref="compactDisc">
     </bean>
 
-    <bean id="blankDisc" class="com.wusd.xmlconfig.impl.BlankDisc">
+    <bean id="blankDisc" class="com.wusd.envprofile.impl.BlankDisc">
         <constructor-arg value="love jie"/>
         <constructor-arg value="wusd"/>
         <!--<constructor-arg><null/></constructor-arg>-->
@@ -33,6 +33,6 @@
             </list>
         </constructor-arg>
     </bean>
-    <!--<bean id="blankDisc" class="com.wusd.xmlconfig.impl.BlankDisc" c:title="love jie" c:artist="wusd">-->
+    <!--<bean id="blankDisc" class="com.wusd.envprofile.impl.BlankDisc" c:title="love jie" c:artist="wusd">-->
     <!--</bean>-->
 </beans>

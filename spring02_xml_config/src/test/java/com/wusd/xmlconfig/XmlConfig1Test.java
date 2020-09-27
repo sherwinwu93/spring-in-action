@@ -1,4 +1,4 @@
-package com.wusd.xmlconfig;
+package com.wusd.envprofile;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

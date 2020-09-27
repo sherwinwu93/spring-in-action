@@ -11,6 +11,7 @@
     <modules>
         <module>spring01_knight</module>
         <module>spring02_soundsystem</module>
+        <module>spring03_freedom_beans</module>
     </modules>
 
 

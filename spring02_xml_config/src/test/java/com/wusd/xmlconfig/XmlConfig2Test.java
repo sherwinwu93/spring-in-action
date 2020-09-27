@@ -1,6 +1,6 @@
-package com.wusd.xmlconfig;
+package com.wusd.envprofile;
 
-import com.wusd.xmlconfig.impl.CDPlayer;
+import com.wusd.envprofile.impl.CDPlayer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
