@@ -1,4 +1,4 @@
-package com.wusd.aop;
+package com.wusd.encoreable;
 
 public class DefaultEncoreable implements Encoreable {
     @Override

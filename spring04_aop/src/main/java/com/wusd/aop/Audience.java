@@ -2,6 +2,7 @@ package com.wusd.aop;
 
 import org.aspectj.lang.annotation.*;
 import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 /**
  * 观众
