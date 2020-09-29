@@ -1,4 +1,4 @@
-package com.wusd.mvc.config;
+package com.wusd.viewresolver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,25 +8,41 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
+import org.springframework.web.servlet.view.tiles3.*;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.wusd.mvc")
+@ComponentScan(basePackages = {"com.wusd.viewresolver.controller"})
 public class WebConfig extends WebMvcConfigurerAdapter {
+
+    @Bean
+    public ViewResolver internalResourceViewResolver() {
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setSuffix(".jsp");
+        resolver.setPrefix("/WEB-INF/views/");
+        resolver.setViewClass(JstlView.class);
+        return resolver;
+    }
+
+    @Bean
+    public TilesConfigurer tilesConfigurer() {
+        TilesConfigurer tiles = new TilesConfigurer();
+        tiles.setDefinitions(new String[] {
+                "/WEB-INF/**/tiles.xml"
+        });
+        tiles.setCheckRefresh(true);
+        return tiles;
+    }
+
     @Bean
     public ViewResolver viewResolver() {
-        //配置JSP视图解析器
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
-        resolver.setExposeContextBeansAsAttributes(true);
-        return resolver;
+        return new TilesViewResolver();
     }
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-        System.out.println("......................................");
-        //配置静态资源的处理 转发到 默认的Servlet
+        //配置静态资源
         configurer.enable();
     }
 }

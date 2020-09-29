@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.core.IsCollectionContaining.hasItems;
+import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -33,6 +34,42 @@ public class SpittleControllerTest {
         mockMvc.perform(get("/spittles"))
                 .andExpect(view().name("spittles"))
                 .andExpect(model().attribute("spittleList", hasItems(expectSpittles.toArray())));
+    }
+
+    @Test
+    public void shouldShowPagedSpittles() throws Exception {
+        List<Spittle> expectedSpittles = createSpittleList(50);
+        SpittleRepository mockRepository = mock(SpittleRepository.class);
+        when(mockRepository.findSpittles(238900, 50))
+                .thenReturn(expectedSpittles);
+
+        SpittleController controller = new SpittleController(mockRepository);
+        MockMvc mockMvc = standaloneSetup(controller)
+                .setSingleView(new InternalResourceView("/WEB-INF/view/spittlesWithQueryParams.jsp"))
+                .build();
+
+        mockMvc.perform(get("/spittlesWithQueryParams?max=238900&count=50"))
+                .andExpect(view().name("spittlesWithQueryParams"))
+                .andExpect(model().attributeExists("spittleList"))
+                .andExpect(model().attribute("spittleList", hasItems(expectedSpittles.toArray())));
+    }
+
+    @Test
+    public void showSpittle() throws Exception {
+        Spittle expectedSpittle = new Spittle("wusd and lijie get married.", new Date());
+        SpittleRepository mockRepository = mock(SpittleRepository.class);
+        when(mockRepository.findOne(12345))
+                .thenReturn(expectedSpittle);
+
+        SpittleController controller = new SpittleController(mockRepository);
+        MockMvc mockMvc = standaloneSetup(controller)
+                .setSingleView(new InternalResourceView("/WEB-INF/view/spittle.jsp"))
+                .build();
+
+        mockMvc.perform(get("/spittle/12345"))
+                .andExpect(view().name("spittle"))
+                .andExpect(model().attributeExists("spittle"))
+                .andExpect(model().attribute("spittle", expectedSpittle));
     }
 
     List<Spittle> createSpittleList(int count) {

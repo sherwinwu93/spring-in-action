@@ -2,7 +2,7 @@
 <%@ page session="false" %>
 <html>
     <head>
-        <title>Spittr</title>
+        <title>Spittr应用</title>
         <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style.css"/>">
     </head>
     <body>
