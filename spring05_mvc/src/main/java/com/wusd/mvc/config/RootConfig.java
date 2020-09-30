@@ -1,4 +1,4 @@
-package com.wusd.mvc.config;
+package com.wusd.thymeleaf.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -17,7 +17,7 @@ import javax.sql.DataSource;
  */
 @Configuration
 @ComponentScan(
-        basePackages = {"com.wusd.mvc"},
+        basePackages = {"com.wusd.thymeleaf"},
         excludeFilters = {
                 @ComponentScan.Filter(type = FilterType.ANNOTATION, value = EnableWebMvc.class)
         })

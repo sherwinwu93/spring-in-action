@@ -1,6 +1,6 @@
-package com.wusd.mvc.controller;
+package com.wusd.thymeleaf.controller;
 
-import com.wusd.mvc.HomeController;
+import com.wusd.thymeleaf.HomeController;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
 

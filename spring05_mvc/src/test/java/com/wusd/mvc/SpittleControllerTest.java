@@ -1,4 +1,4 @@
-package com.wusd.mvc;
+package com.wusd.thymeleaf;
 
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;

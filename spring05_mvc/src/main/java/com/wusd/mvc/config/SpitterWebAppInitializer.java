@@ -1,4 +1,4 @@
-package com.wusd.mvc.config;
+package com.wusd.thymeleaf.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

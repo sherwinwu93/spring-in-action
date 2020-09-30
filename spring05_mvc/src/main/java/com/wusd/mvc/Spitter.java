@@ -1,4 +1,4 @@
-package com.wusd.mvc;
+package com.wusd.thymeleaf;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
 

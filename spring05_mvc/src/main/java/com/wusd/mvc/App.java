@@ -1,4 +1,4 @@
-package com.wusd.mvc;
+package com.wusd.thymeleaf;
 
 public class App {
 }

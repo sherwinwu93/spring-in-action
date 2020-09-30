@@ -1,4 +1,4 @@
-package com.wusd.mvc.config;
+package com.wusd.thymeleaf.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.wusd.mvc")
+@ComponentScan("com.wusd.thymeleaf")
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public ViewResolver viewResolver() {
