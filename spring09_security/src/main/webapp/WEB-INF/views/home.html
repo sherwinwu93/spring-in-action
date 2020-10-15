@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Spitter</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/resources/style.css}"/>
+</head>
+<body>
+<!--todo 不成功, 显示认证的用户名称-->
+<div sec:authorize="isAuthenticated()">
+    Hello there...<span sec:authentication="name">user-name</span>
+</div>
+
+<div id="header" th:include="page :: header"></div>
+
+<div>
+    <h1>Welcome to Spitter</h1>
+    <a th:href="@{/spittles}">Spittles</a>
+    <br/>
+
+    View: <span th:text="${view}">unknown</span>
+</div>
+
+<div id="footer" th:include="page :: copy"></div>
+
+</body>
+</html>
