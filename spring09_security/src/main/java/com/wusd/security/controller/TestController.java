@@ -41,4 +41,16 @@ public class TestController {
         }
         return "wusd";
     }
+
+    @RequestMapping(value = "/roleUser", method = RequestMethod.GET)
+    @ResponseBody
+    public String roleUser() {
+        return "roleUser";
+    }
+
+    @RequestMapping(value = "/roleAdmin", method = RequestMethod.GET)
+    @ResponseBody
+    public String roleAdmin() {
+        return "roleAdmin";
+    }
 }
