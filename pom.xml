@@ -22,7 +22,7 @@
         <ehcacheVersion>2.7.4</ehcacheVersion>
         <ehcacheJCacheVersion>1.4.0-beta1</ehcacheJCacheVersion>
         <!--1-->
-        <h2Version>1.4.182</h2Version>
+        <h2Version>2.1.210</h2Version>
         <!--1-->
         <hamcrestVersion>1.3</hamcrestVersion>
         <hibernateVersion>4.1.6.Final</hibernateVersion>
