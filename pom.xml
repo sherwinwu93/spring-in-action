@@ -28,7 +28,7 @@
         <hibernateVersion>4.1.6.Final</hibernateVersion>
         <hibernateEntityManagerVersion>4.0.1.Final</hibernateEntityManagerVersion>
         <!--1-->
-        <hibernateValidatorVersion>5.0.1.Final</hibernateValidatorVersion>
+        <hibernateValidatorVersion>6.0.23.Final</hibernateValidatorVersion>
         <jacksonVersion>2.4.3</jacksonVersion>
         <javaxMailVersion>1.4.7</javaxMailVersion>
         <!--1-->
