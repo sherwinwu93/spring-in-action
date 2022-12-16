@@ -50,7 +50,7 @@
         <springDataJpaVersion>1.3.2.RELEASE</springDataJpaVersion>
         <springSecurityVersion>3.2.0.RELEASE</springSecurityVersion>
         <!--1-->
-        <springVersion>4.0.0.RELEASE</springVersion>
+        <springVersion>5.2.20.RELEASE</springVersion>
         <springWebflowVersion>2.4.1.RELEASE</springWebflowVersion>
         <systemRulesVersion>1.5.0</systemRulesVersion>
         <thymeleafVersion>2.1.3.RELEASE</thymeleafVersion>
